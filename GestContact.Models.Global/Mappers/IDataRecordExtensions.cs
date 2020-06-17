@@ -14,5 +14,10 @@ namespace GestContact.Models.Global.Mappers
         {
             return new Utilisateur() { Id = (int)dataRecord["Id"], Nom = (string)dataRecord["Nom"], Prenom = (string)dataRecord["Prenom"], Email = (string)dataRecord["Email"] };
         }
+
+        internal static Contact ToContact(this IDataRecord dataRecord)
+        {
+            return new Contact() { Id = (int)dataRecord["Id"], Nom = (string)dataRecord["Nom"], Prenom = (string)dataRecord["Prenom"], Email = (string)dataRecord["Email"], Tel = (string)dataRecord["Tel"], UtilisateurId = (int)dataRecord["UtilisateurId"] };
+        }
     }
 }

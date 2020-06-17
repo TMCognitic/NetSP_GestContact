@@ -59,6 +59,7 @@
     <Folder Include="Tables" />
     <Folder Include="Procedures" />
     <Folder Include="Functions" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Utilisateurs.sql" />
@@ -66,8 +67,12 @@
     <Build Include="Functions\GetPostSalt.sql" />
     <Build Include="Procedures\AddUtilisateur.sql" />
     <Build Include="Procedures\CheckUser.sql" />
+    <Build Include="Tables\Contacts.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GestContact.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\InsertData.sql" />
   </ItemGroup>
 </Project>

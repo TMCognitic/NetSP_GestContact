@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Contact.cs" />
     <Compile Include="Data\Utilisateur.cs" />
     <Compile Include="Mappers\Mappers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\ContactService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace GestContact.Models.Global.Services
 {
     public class AuthService : IAuthService<Utilisateur>
     {
-        Connection _connection;
+        private Connection _connection;
 
         public AuthService()
         {

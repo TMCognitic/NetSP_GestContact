@@ -19,22 +19,33 @@ namespace GestContact.Controllers
         }
 
         // GET: Auth
+        [AnonymousRequired]
         public ActionResult Index()
         {
             return RedirectToAction("Login");
-        }        
+        }
 
+        [AnonymousRequired]
         public ActionResult Login()
         {
             //Test
             return View();
         }
 
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AnonymousRequired]
         public ActionResult Login(LoginForm loginForm)
         {
-            //Test
+            string uri = "~/";
+
+            if(!(HttpContext.Request.QueryString["url"] is null))
+            {
+                uri = HttpContext.Request.QueryString["url"];
+            }
+
 
             if (ModelState.IsValid)
             {
@@ -45,7 +56,7 @@ namespace GestContact.Controllers
                     if (!(utilisateur is null))
                     {
                         SessionManager.User = utilisateur;
-                        return RedirectToAction("Index", "Home");
+                        return Redirect(uri);
                     }
 
                     ViewBag.Error = "Email ou le mot de passe sont invalide!!";
@@ -59,6 +70,7 @@ namespace GestContact.Controllers
             return View(loginForm);
         }
         
+        [AnonymousRequired]
         public ActionResult Register()
         {
             //Test
@@ -68,6 +80,7 @@ namespace GestContact.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AnonymousRequired]
         public ActionResult Register(RegisterForm registerForm)
         {
             //Test
@@ -90,6 +103,7 @@ namespace GestContact.Controllers
             return View(registerForm);
         }
 
+        [AuthRequired]
         public ActionResult Logout()
         {
             SessionManager.Abandon();
