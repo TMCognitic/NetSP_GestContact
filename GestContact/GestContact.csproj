@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Infrastructure\AuthRequiredAttribute.cs" />
     <Compile Include="Infrastructure\EmailExistsAttribute.cs" />
+    <Compile Include="Infrastructure\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\SessionManager.cs" />
     <Compile Include="Models\Forms\CreateContactForm.cs" />
     <Compile Include="Models\Forms\DetailsContact.cs" />

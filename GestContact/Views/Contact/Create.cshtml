@@ -1,4 +1,5 @@
-﻿@model GestContact.Models.Forms.CreateContactForm
+﻿@using GestContact.Infrastructure;
+@model GestContact.Models.Forms.CreateContactForm
 
 @{
     ViewBag.Title = "Create";
@@ -6,12 +7,8 @@
 
 <h2>Create</h2>
 
-@if (ViewBag.Error != null)
-{
-    <div>
-        <span class="text-danger">ViewBag.Error</span>
-    </div>
-}
+@Html.DisplayError("Error")
+
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()

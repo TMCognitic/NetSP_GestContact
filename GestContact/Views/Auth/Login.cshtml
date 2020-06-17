@@ -1,4 +1,5 @@
-﻿@model GestContact.Models.Forms.LoginForm
+﻿@using GestContact.Infrastructure
+@model GestContact.Models.Forms.LoginForm
 
 @{
     ViewBag.Title = "Login";
@@ -6,10 +7,12 @@
 
 <h2>Login</h2>
 
-@using (Html.BeginForm()) 
+@Html.DisplayError("Error")
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>LoginForm</h4>
         <hr />
